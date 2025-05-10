@@ -37,7 +37,7 @@ jobs:
     
       - name: Fetch dependencies
         run: |
-          bun install -g @cynthiaweb/cynthiaweb-mini@0.2.2
+          bun install -g @cynthiaweb/cynthiaweb-mini@0.2.3
       - name: Pregenerate
         run: cynthiaweb-mini pregenerate
       - name: Upload artifact
