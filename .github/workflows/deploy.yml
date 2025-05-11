@@ -28,22 +28,30 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      # Fetch your site files from the repo
       - name: Checkout
         uses: actions/checkout@v4
+        # Preconfigure pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        # Install Bun, the runtime that powers cynthiaweb-mini
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
-    
+
       - name: Fetch dependencies
+        # Install the cynthiaweb-mini package version 1.0.0-rc
         run: |
-          bun install -g @cynthiaweb/cynthiaweb-mini@0.2.3
+          bun install -g @cynthiaweb/cynthiaweb-mini@1.0.0-rc
+      # Let Cynthia Mini build the site
       - name: Pregenerate
         run: cynthiaweb-mini pregenerate
+      # Upload the generated site to the GitHub Pages artifact store
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # Use the out folder as the artifact, which is the default output folder for cynthiaweb-mini
           path: "./out/"
+      # Deploy the site to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
