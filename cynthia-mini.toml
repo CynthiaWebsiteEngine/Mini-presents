@@ -22,5 +22,5 @@
   #
   # You will need to give the utterances bot access to your repo.
   # See https://github.com/apps/utterances to add the utterances bot to your repo
-  comment_repo = ""
+  comment_repo = "CynthiaWebsiteEngine/Mini-presents"
   
