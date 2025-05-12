@@ -39,9 +39,9 @@ jobs:
         uses: oven-sh/setup-bun@v2
 
       - name: Fetch dependencies
-        # Install the cynthiaweb-mini package version 1.0.0-rc
+        # Install the cynthiaweb-mini package version 1.0.0-rc1
         run: |
-          bun install -g @cynthiaweb/cynthiaweb-mini@1.0.0-rc
+          bun install -g @cynthiaweb/cynthiaweb-mini@1.0.0-rc1
       # Let Cynthia Mini build the site
       - name: Pregenerate
         run: cynthiaweb-mini pregenerate

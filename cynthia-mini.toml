@@ -8,7 +8,7 @@
   # Your website's name, displayed in various places
   site_name = "My Site"
   # A brief description of your website
-  site_description = "A big site on a mini Cynthia!"
+  site_description = "Cynthia Mini site to demonstrate (and also test in prod shh)"
 
   [server]
   # Port number for the web server
